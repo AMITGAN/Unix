@@ -15,7 +15,7 @@ def connect(host: str = '127.0.0.1', port: int = 3000):
     threading.Thread(target=listen, args=(s,), daemon=True).start()
     s.send('__join'.encode('ascii'))
     while True:
-        msg = input(f'you: ')
+        msg = input('you: ')
         if msg == 'exit':
             break
         s.send(msg.encode('ascii'))
